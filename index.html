@@ -10,24 +10,65 @@
     <div class="container">
         <div class="video-bg">
             <video id="video-bg" autoplay loop muted playsinline webkit-playsinline>
-                <source src="video/bg-1.mp4" type="video/mp4">
+                <source src="video/bg-1.mp4" type="video/mp4" id="video-rn">
             </video>
         </div>
-
+        
         <div class="logo">
             <h1 style="font-size: 3rem;">LOGO</h1>
             <h3>Travel With US</h3>
         </div>
 
         <div class="registation-div">
-            <h2>Welcome</h2>
+            <h2 id="head-text">Welcome</h2>
             <div class="registation">
                 <p>Don't Have an Account? <a href="google.com" target="_blank">Sing Up.</a></p>
-                <button type="singup" id="singup">Sing Up</button>
+                <button type="button" id="singup" class="singup-btn">Sing Up</button>
                 <p>Have an Account? <a href="google.com" target="_blank">Log In.</a></p>
-                <button type="login" id="login">Log In</button>
+                <button type="button" id="login" class="login-btn">Log In</button>
             </div>
+            <form>
+                <div class="singup-from">
+                    <div class="from-group">
+                        <label for="fullname" class="fullname">Full Name :</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name..." required>
+                    </div>
+                    <div class="from-group">
+                        <label for="gmail" class="gmail">Gmail :</label>
+                        <input type="text" id="gmail" name="gmail" placeholder="Enter Your Gmail Address..." required>
+                    </div>
+                    <div class="from-group">
+                        <label for="password" class="password">Password :</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Your Password..." required>
+                    </div>
+                    <div class="from-group">
+                        <label for="cm-password" class="cm-password">Confirm Password :</label>
+                        <input type="password" id="cm-password" name="cm-password" placeholder="Enter Your Password Again..." required>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+            <!-- <form> -->
+                <div class="login-from">
+                    <div class="from-group">
+                        <label for="fullname" class="fullname">Full Name :</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name..." required>
+                    </div>
+                    <div class="from-group">
+                        <label for="gmail" class="gmail">Gmail :</label>
+                        <input type="text" id="gmail" name="gmail" placeholder="Enter Your Gmail Address..." required>
+                    </div>
+                    <div class="from-group">
+                        <label for="password" class="password">Password :</label>
+                        <input type="password" id="password" name="password" placeholder="Enter Your Password..." required>
+                    </div>
+                    <a href="home.html" rel="noopener noreferrer">
+                        <button type="submit" class="submit-button">Submit</button>
+                    </a>
+                </div>
+            <!-- </form> -->
         </div>
+
     </div>
 
 

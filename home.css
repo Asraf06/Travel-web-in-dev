@@ -1,0 +1,432 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  font-family: roboto;
+  background-color: #00706500;
+}
+
+/* .container {
+    background-color: #e1e1e173;
+    height: 102%;
+    width: 100%;
+    margin-top: -30px;
+    object-fit: cover;
+} */
+
+.logo {
+  justify-content: center;
+  text-align: center;
+  font-family: roboto;
+  margin-top: -1%;
+  transform: translateY(10px);
+  margin-right: 80%;
+  font-size: 12px;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo h3 {
+  top: 0;
+  margin-top: -2rem;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+/* Main container */
+.cards-container {
+  max-width: 10200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  /* Space between cards */
+  margin-top: 30px;
+}
+
+
+.card {
+  position: relative;
+  width: calc(33.333% - 20px);
+  min-width: 300px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  overflow: hidden;
+  opacity: 0;
+  /* Start hidden for entrance animation */
+
+  /* Beautiful box shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+    0 6px 6px rgba(0, 0, 0, 0.2);
+
+  /* Smooth transitions */
+  /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
+  /* Entrance animation - applied via JavaScript */
+  /* animation: cardEntrance 0.6s ease-out forwards; */
+}
+
+.card.animate-in {
+  animation: cardEntrance 0.6s ease-out forwards;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delays for cards */
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.card:nth-child(7) {
+  animation-delay: 0s;
+}
+
+.card:nth-child(8) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(9) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(10) {
+  animation-delay: 0.3s;
+}
+.card:nth-child(11) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(12) {
+  animation-delay: 0.5s;
+}
+
+/* Hover effects */
+.card:hover {
+  transform: translateY(-5px);
+
+  /* Enhanced shadow on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3),
+    0 10px 10px rgba(0, 0, 0, 0.2);
+
+  /* Optional pulse animation */
+  /* animation: cardHover 1s ease infinite; */
+}
+
+/* Card hover animation */
+@keyframes cardHover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.2) 65%,
+      rgba(0, 0, 0, 0) 100%);
+  transition: all 0.4s ease-in-out;
+}
+
+.card h1 {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-size: 3.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.card:hover h1 {
+  transform: scale(1.10);
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 30px;
+    right: 35px;
+    z-index: 1001;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    position: relative;
+    margin-left: -30px;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+.sidebar {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #434343;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Active states */
+.sidebar.active {
+    right: 0;
+}
+
+.menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger::after {
+    transform: rotate(-45deg);
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.sidebar-header h2 {
+  margin: 0 0 30px 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+
+.menu-items logout {
+  margin-bottom: 30%;
+  background-color: red;
+}
+
+span {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 20px;
+  background-color: #00a898;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background-color: rgba(26, 188, 156, 0.5);
+}
+
+nav a:active {
+  background-color: rgba(0, 255, 204, 0.5);
+  transform: scale(0.98);
+}
+
+nav a i {
+  padding: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+/* Active states */
+.sidebar.active {
+  right: 0;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Prevent scrolling when overlay is active */
+body.overlay-active {
+  overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .logo {
+    transform: translateY(10px);
+    margin-right: 74%;
+    font-size: 12px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .logo h3 {
+    top: 0;
+    margin-top: -2rem;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+  }
+
+  .card {
+    width: calc(50% - 35px);
+    min-width: 350px;
+  }
+
+  .cards-wrapper {
+    gap: 15px;
+    /* Space between cards */
+    margin-top: 30px;
+  }
+  
+  .card img {
+    height: 200px;
+  }
+
+  .card h1 {
+    font-size: 2rem;
+  }
+
+  .sidebar {
+    width: 200px;
+}
+}
+
+ 
