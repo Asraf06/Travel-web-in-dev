@@ -7,45 +7,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="style/side bar/sidebar.css">
   <title>Home Page</title>
 </head>
 
 <body>
-  <div class="menu-toggle">
-    <div class="hamburger"></div>
-  </div>
-
-  <div class="sidebar">
-    <div class="sidebar-header">
-      <h2>MENU</h2>
-    </div>
-    <nav class="menu-items">
-      <a href="#" class="menu-item">
-        <i class="fas fa-home"></i>
-        <span>HOME</span>
-      </a>
-      <a href="#" class="menu-item">
-        <i class="fas fa-suitcase"></i>
-        <span>Travel</span>
-      </a>
-      <a href="#" class="menu-item">
-        <i class="fas fa-user"></i>
-        <span>Profile</span>
-      </a>
-      <a href="#" class="menu-item">
-        <i class="fas fa-cog"></i>
-        <span>Settings</span>
-      </a>
-      <div class="divider"></div>
-      <a href="index.html" class="menu-item logout">
-        <i class="fas fa-sign-out-alt"></i>
-        <span>Log Out</span>
-      </a>
-    </nav>
-  </div>
-
-  <div class="overlay"></div>
-
   <div class="container">
     <div class="video-bg">
       <video id="video-bg" autoplay loop muted playsinline webkit-playsinline>
@@ -53,11 +19,48 @@
       </video>
     </div>
 
-    <div class="cards-container">
-      <div class="logo">
-        <h1 style="font-size: 2.3rem;">LOGO</h1>
-        <h3>Travel With US</h3>
+    <div class="logo">
+      <h1 style="font-size: 2.3rem;">LOGO</h1>
+      <h3>Travel With US</h3>
+    </div>
+
+    <div class="menu-toggle">
+      <div class="hamburger"></div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>MENU</h2>
       </div>
+      <nav class="menu-items">
+        <a href="#" class="menu-item">
+          <i class="fas fa-home"></i>
+          <span>HOME</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fas fa-suitcase"></i>
+          <span>Travel</span>
+        </a>
+        <a href="profile.html" class="menu-item">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </a>
+        <a href="#" class="menu-item">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </a>
+        <!-- <div class="divider"></div> -->
+        <a href="index.html" class="menu-item logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Log Out</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="cards-container">
+
 
       <div class="cards-wrapper">
         <div class="card">
@@ -149,8 +152,12 @@
       </div>
     </div>
   </div>
+  <nav class="nav-bar">
 
+  </nav>
   <script src="home.js"></script>
 </body>
 
 </html>
+
+<!-- 083457 -->

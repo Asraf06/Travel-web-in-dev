@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="style/side bar/sidebar.css">
+  <title>Travel with US</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <div class="video-bg">
+    <video id="video-bg" autoplay loop muted playsinline webkit-playsinline>
+      <source src="video/bg-1.mp4" type="video/mp4" id="video-rn">
+    </video>
+  </div>
+
+  <div class="logo">
+    <h1>LOGO</h1>
+    <h3>Travel With US</h3>
+  </div>
+
+  <div class="menu-toggle">
+    <div class="hamburger"></div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h2>MENU</h2>
+    </div>
+    <nav class="menu-items">
+      <a href="home.html" class="menu-item">
+        <i class="fas fa-home"></i>
+        <span>HOME</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i class="fas fa-suitcase"></i>
+        <span>Travel</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+      </a>
+      <a href="#" class="menu-item">
+        <i class="fas fa-cog"></i>
+        <span>Settings</span>
+      </a>
+      <!-- <div class="divider"></div> -->
+      <a href="index.html" class="menu-item logout">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Log Out</span>
+      </a>
+    </nav>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="left-column">
+      <div class="card profile-card">
+        <div class="profile-pic" id="profile-pic-container">
+          <i class="fas fa-user"></i>
+          <input type="file" id="profile-upload" accept="image/*">
+        </div>
+        <div class="profile-info">
+          <h2>Asraful</h2>
+          <p>Nick Name: Nayeem</p>
+          <p>G-mail : G-mail Address</p>
+        </div>
+      </div>
+
+      <div class="card vote-section">
+        <h3>Vote For Next Tour 🎉</h3>
+        <br>
+        <p>Type The place name Where You went to go....</p>
+        <div class="vote-input-container">
+          <input type="text" placeholder="Enter place name">
+          <button class="submit-btn">Submit</button>
+        </div>
+      </div>
+
+      <div class="card social-section">
+        <h3 class="follow-title">Follow Us ON!</h3>
+        <div class="social-links">
+          <a href="https://www.facebook.com/Arshu.mine.06"><i class="fab fa-facebook"></i></a>
+          <a href="https://x.com/Asraf_N06"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/ah_nayeem.06/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="card info-section">
+        <h3>Information About You</h3>
+        <div class="info-item">
+          <p>Department : Computer</p>
+        </div>
+        <div class="info-item">
+          <p>Semester : 3rd semester</p>
+        </div>
+        <div class="info-item">
+          <p>Board Roll : 88*****</p>
+        </div>
+        <a href="index.html" style="text-decoration: none;" class="logout-btn">
+          <button >Log Out</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('profile-pic-container').addEventListener('click', function () {
+      document.getElementById('profile-upload').click();
+    });
+
+    document.getElementById('profile-upload').addEventListener('change', function (e) {
+      if (e.target.files && e.target.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+          const profilePicContainer = document.getElementById('profile-pic-container');
+          profilePicContainer.innerHTML = '';
+
+          const img = document.createElement('img');
+          img.src = event.target.result;
+          img.classList.add('profile-pic');
+          img.style.objectFit = 'cover';
+
+          profilePicContainer.appendChild(img);
+        }
+
+        reader.readAsDataURL(e.target.files[0]);
+      }
+    });
+
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      this.classList.toggle('active');
+      document.querySelector('.sidebar').classList.toggle('active');
+      document.querySelector('.overlay').classList.toggle('active');
+      const hamburger = document.querySelector(".hamburger");
+
+      // if (hamburger.style.backgroundColor = "#000000")
+    });
+
+    document.querySelector('.overlay').addEventListener('click', function () {
+      this.classList.remove('active');
+      document.querySelector('.menu-toggle').classList.remove('active');
+      document.querySelector('.sidebar').classList.remove('active');
+    });
+  </script>
+</body>
+
+</html>
